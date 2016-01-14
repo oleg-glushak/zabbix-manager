@@ -1,9 +1,13 @@
 {
+    "zabbix-server": {
+        "zabbix_groups": ["Zabbix servers"],
+        "zabbix_templates": ["Template OS Linux","Template Postfix Queue","Template MySQL XtraDB","Template MySQL Master"]
+    },
+    "galera arbitrator": {
+        "zabbix_groups": ["other"]
+    },
     "mysql56": {
-        "detach_zabbix_groups": ["Network devices","lvs"],
-        "attach_zabbix_groups": ["supergroup”],
-        "detach_zabbix_templates": ["Template MTA check"],
-        "attach_zabbix_templates": ["Template OS Linux"],
+        "zabbix_templates": ["Template OS Linux","Template MySQL Master"],
         "detach_zabbix_groups_by_fact": [
              {
                 "puppet_fact_name": "mysql_role",
