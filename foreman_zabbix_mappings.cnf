@@ -1,34 +1,32 @@
 {
-   "foreman_api_uri": "http://xen-puppet1.local.dgvg.ru/api",
-
-   "mysql56": {
-       "detach_zabbix_groups": ["Network devices","lvs"],
-       "attach_zabbix_groups": ["supergroup”],
-       "detach_zabbix_templates": ["Template MTA check"],
-       "attach_zabbix_templates": ["Template OS Linux"],
-       "detach_zabbix_groups_by_fact": [ 
-         {
-"puppet_fact_name": "mysql_role",
-"puppet_fact_value": "master",
-"zabbix_group": ["mysql-slave"]
-        },
-        {
-"puppet_fact_name": "mysql_role",
-"puppet_fact_value": "master",
-"zabbix_group": ["mysql-slave"]
-        }
-       ],
-        "attach_zabbix_groups_by_fact": [ 
-         {
-"puppet_fact_name": "mysql_role",
-"puppet_fact_value": "master",
-"zabbix_group": ["mysql-master"]
-        },
-        {
-"puppet_fact_name": "mysql_role",
-"puppet_fact_value": "slave",
-"zabbix_group": ["mysql-slave"]
-        }
-       ]
+    "mysql56": {
+        "detach_zabbix_groups": ["Network devices","lvs"],
+        "attach_zabbix_groups": ["supergroup”],
+        "detach_zabbix_templates": ["Template MTA check"],
+        "attach_zabbix_templates": ["Template OS Linux"],
+        "detach_zabbix_groups_by_fact": [
+             {
+                "puppet_fact_name": "mysql_role",
+                "puppet_fact_value": "master",
+                "zabbix_group": ["mysql-slave"]
+            },
+            {
+                "puppet_fact_name": "mysql_role",
+                "puppet_fact_value": "master",
+                "zabbix_group": ["mysql-slave"]
+            }
+        ],
+        "attach_zabbix_groups_by_fact": [
+             {
+                "puppet_fact_name": "mysql_role",
+                "puppet_fact_value": "master",
+                "zabbix_group": ["mysql-master"]
+            },
+            {
+                "puppet_fact_name": "mysql_role",
+                "puppet_fact_value": "slave",
+                "zabbix_group": ["mysql-slave"]
+            }
+        ]
     }
 }

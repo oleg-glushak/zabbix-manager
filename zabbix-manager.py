@@ -17,16 +17,15 @@ foreman_user = "api"
 foreman_password = "SecretPassword"
 log_file = "/var/log/zabbix-manager.log"
 
-def get_my_hostname():
-    return platform.node()
+def get_my_short_hostname():
+    return platform.node().split('.')[0]
 
 def get_my_hostgroup():
-    #get my hostname and get hostgroup for my hostname
     return "testhostgroup"
 
 def main():
     hostgroup = get_my_hostgroup()
-    print "Hello"
+    print get_my_short_hostname()
 
 if __name__ == '__main__':
     main()
